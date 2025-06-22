@@ -22,6 +22,9 @@ COPY config.json ./
 COPY builder.config.json ./
 COPY .env ./
 
+ENV S3_ACCESS_KEY_ID
+ENV S3_SECRET_ACCESS_KEY
+
 RUN sh ./scripts/preinstall.sh
 # Install all dependencies
 RUN pnpm install --frozen-lockfile
