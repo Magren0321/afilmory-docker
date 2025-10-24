@@ -13,8 +13,8 @@ A [Afilmory](https://github.com/Afilmory/Afilmory) deployment solution based on 
 
 ### Requirements
 
-* Docker
-* Docker Compose (optional)
+- Docker
+- Docker Compose (optional)
 
 ### 1. Edit Configuration Files
 
@@ -45,11 +45,13 @@ A [Afilmory](https://github.com/Afilmory/Afilmory) deployment solution based on 
 
 ```json
 {
-  "repo": { // Use remote repository as manifest and thumbnail cache
+  "repo": {
+    // Use remote repository as manifest and thumbnail cache
     "enable": false,
     "url": "https://github.com/username/gallery-public"
   },
-  "storage": { // Storage configuration
+  "storage": {
+    // Storage configuration
     "provider": "s3",
     "bucket": "your-photos-bucket",
     "region": "us-east-1",
@@ -61,32 +63,26 @@ A [Afilmory](https://github.com/Afilmory/Afilmory) deployment solution based on 
 
 **`.env`**
 
-* S3 storage configuration:
+- S3 storage configuration:
 
-```
+```env
 S3_ACCESS_KEY_ID=your_access_key_id
 S3_SECRET_ACCESS_KEY=your_secret_access_key
 ```
 
-* PG (optional):
+- PG (optional):
 
-```
+```env
 PG_CONNECTION_STRING=
 ```
 
-* GIT (optional):
+- GIT (optional):
 
-```
+```env
 GIT_TOKEN=
 ```
 
 ### 2. Build Docker Image
-
-> 大陆服务器可能会遇到 Alpine 内部安装 Perl 失败，打包失败的情况，可在 apk update 命令前插入下属指令，替换源
-> ```
-> sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories
-> ```
-> 之后再继续执行 build 指令
 
 ```bash
 docker build -t afilmory .
@@ -105,7 +101,7 @@ services:
   afilmory:
     build: .
     ports:
-      - '3000:3000'
+      - "3000:3000"
     environment:
       - NODE_ENV=production
     volumes:
