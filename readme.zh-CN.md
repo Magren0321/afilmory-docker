@@ -41,22 +41,28 @@
 }
 ```
 
-**`builder.config.json`**
+**`builder.config.ts`**
 
-```json
-{
-  "repo": { // 使用远端仓库作为 manifest 和 thumbnail 缓存
-    "enable": false,
-    "url": "https://github.com/username/gallery-public"
+```ts
+
+import { defineBuilderConfig } from '@afilmory/builder'
+
+export default defineBuilderConfig(() => ({
+  repo: {
+    // 使用远端仓库作为 manifest 和 thumbnail 缓存
+    enable: false,
+    url: 'https://github.com/username/gallery-public',
   },
-  "storage": { // 存储配置
-    "provider": "s3",
-    "bucket": "your-photos-bucket",
-    "region": "us-east-1",
-    "prefix": "photos/",
-    "customDomain": "cdn.yourdomain.com"
-  }
-}
+  storage: {
+    // 存储配置
+    provider: 's3',
+    bucket: 'your-photos-bucket',
+    region: 'us-east-1',
+    prefix: 'photos/',
+    customDomain: 'cdn.yourdomain.com',
+  },
+}))
+
 ```
 
 **`.env`**
@@ -112,7 +118,7 @@ services:
       - NODE_ENV=production
     volumes:
       - ./config.json:/app/config.json
-      - ./builder.config.json:/app/builder.config.json
+      - ./builder.config.ts:/app/builder.config.ts
       - ./.env:/app/.env
 ```
 

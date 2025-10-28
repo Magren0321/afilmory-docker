@@ -41,25 +41,30 @@ A [Afilmory](https://github.com/Afilmory/Afilmory) deployment solution based on 
 }
 ```
 
-**`builder.config.json`**
+**`builder.config.ts`**
 
-```json
-{
-  "repo": {
+```ts
+
+import { defineBuilderConfig } from '@afilmory/builder'
+
+export default defineBuilderConfig(() => ({
+  repo: {
     // Use remote repository as manifest and thumbnail cache
-    "enable": false,
-    "url": "https://github.com/username/gallery-public"
+    enable: false,
+    url: 'https://github.com/username/gallery-public',
   },
-  "storage": {
+  storage: {
     // Storage configuration
-    "provider": "s3",
-    "bucket": "your-photos-bucket",
-    "region": "us-east-1",
-    "prefix": "photos/",
-    "customDomain": "cdn.yourdomain.com"
-  }
-}
+    provider: 's3',
+    bucket: 'your-photos-bucket',
+    region: 'us-east-1',
+    prefix: 'photos/',
+    customDomain: 'cdn.yourdomain.com',
+  },
+}))
+
 ```
+
 
 **`.env`**
 
@@ -106,7 +111,7 @@ services:
       - NODE_ENV=production
     volumes:
       - ./config.json:/app/config.json
-      - ./builder.config.json:/app/builder.config.json
+      - ./builder.config.ts:/app/builder.config.ts
       - ./.env:/app/.env
 ```
 

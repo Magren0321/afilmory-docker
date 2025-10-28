@@ -19,7 +19,7 @@ RUN apk update && apk add --no-cache git perl
 
 RUN git clone https://github.com/Afilmory/Afilmory --depth 1 .
 COPY config.json ./
-COPY builder.config.json ./
+COPY builder.config.ts ./
 COPY .env ./
 
 ARG S3_ACCESS_KEY_ID
