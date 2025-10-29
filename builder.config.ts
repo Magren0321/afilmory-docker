@@ -12,6 +12,6 @@ export default defineBuilderConfig(() => ({
     bucket: 'gallery',
     region: 'us-east-1',
     prefix: '/',
-    customDomain: 'https://afilmory.magren.cc',
+    customDomain: 'https://gallery.magren.cc',
   },
 }))
