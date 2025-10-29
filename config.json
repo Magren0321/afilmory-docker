@@ -1,20 +1,21 @@
 {
-  "name": "Innei's Photo Gallery",
-  "title": "Innei's Photo Gallery",
+  "name": "Magren's Photo Gallery",
+  "title": "Magren's Photo Gallery",
   "description": "Capturing beautiful moments in life, documenting daily warmth and emotions through my lens.",
-  "url": "https://gallery.innei.in",
+  "url": "https://gallery.magren.cc",
   "accentColor": "#fb7185",
   "ogImage": {
     "width": 1200,
     "height": 630
   },
   "author": {
-    "name": "Photo Gallery",
-    "url": "https://innei.in/",
-    "avatar": "//cdn.jsdelivr.net/gh/Innei/static@master/avatar.png"
+    "name": "Magren",
+    "url": "https://magren.cc/",
+    "avatar": "https://magren.cc/avatar.png"
   },
   "social": {
-    "twitter": "@__oQuery"
+    "twitter": "@Magren_lin",
+    "github": "Magren0321"
   },
   "extra": {
     "accessRepo": true

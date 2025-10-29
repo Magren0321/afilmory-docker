@@ -9,9 +9,9 @@ export default defineBuilderConfig(() => ({
   storage: {
     // Storage configuration
     provider: 's3',
-    bucket: 'your-photos-bucket',
+    bucket: 'gallery',
     region: 'us-east-1',
-    prefix: 'photos/',
-    customDomain: 'cdn.yourdomain.com',
+    prefix: '/',
+    customDomain: 'https://afilmory.magren.cc',
   },
 }))
