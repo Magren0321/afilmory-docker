@@ -27,6 +27,10 @@ ARG S3_SECRET_ACCESS_KEY
 ARG GIT_TOKEN
 ARG PG_CONNECTION_STRING
 
+ENV S3_ACCESS_KEY_ID=${S3_ACCESS_KEY_ID}
+ENV S3_SECRET_ACCESS_KEY=${S3_SECRET_ACCESS_KEY}
+
+
 RUN sh ./scripts/preinstall.sh
 # Install all dependencies
 RUN pnpm install --frozen-lockfile
